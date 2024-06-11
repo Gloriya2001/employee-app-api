@@ -1,9 +1,12 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const cors = require("cors")
+const {employeemodel} = require("./models/employee")
+
 
 const app = express()
 app.use(cors())
+app.use(express())
 
 
 app.post("/add", (req, res) => {
