@@ -6,8 +6,16 @@ const app = express()
 app.use(cors())
 
 
-app.get("/", (req, res) => {
-    res.send("hello")
+app.post("/add", (req, res) => {
+
+    //1.input read and display it using console
+    //2.pass input to model and then object . save
+    //3.model .find use promise method ..to get the view
+   
+})
+
+app.get("/view",(req,res)=>{
+    res.send("hai")
 })
 
 app.listen(8080,()=>{
