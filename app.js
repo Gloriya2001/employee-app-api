@@ -6,10 +6,20 @@ const {employeemodel} = require("./models/employee")
 
 const app = express()
 app.use(cors())
-app.use(express())
+app.use(express.json())
 
 
 app.post("/add", (req, res) => {
+    
+    let input = req.body
+    //console.log(input)
+   // res.send("success")
+
+   let employee = new employeemodel(input)
+   employee.save()//to save to database
+   console.log(employee)
+   res.send("success")
+
 
     //1.input read and display it using console
     //2.pass input to model and then object . save
@@ -18,7 +28,7 @@ app.post("/add", (req, res) => {
 })
 
 app.get("/view",(req,res)=>{
-    res.send("hai")
+    
 })
 
 app.listen(8080,()=>{
