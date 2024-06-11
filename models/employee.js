@@ -1,8 +1,8 @@
 const mongoose = require("mongoose")//mongoose importing
 const schema = mongoose.Schema(//structure creating
     {
-        "empId":String,
-        "empName":String
+        "empId":{type:String,required:true},
+        "empName":{type:String,required:true}
     }
 )
 
