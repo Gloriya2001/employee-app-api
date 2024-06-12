@@ -27,7 +27,26 @@ app.post("/add", (req, res) => {
    
 })
 
-app.get("/view",(req,res)=>{
+app.post("/search",(req,res)=>{
+
+    let input = req.body
+    employeemodel.find(input).then(
+
+        (data)=>{
+            res.json(data)
+        }
+
+
+    ).catch(
+        (error)=>{
+            res.json(error)
+        }
+    )
+
+
+})
+
+app.post("/view",(req,res)=>{
     
     employeemodel.find().then(
 
@@ -38,6 +57,10 @@ app.get("/view",(req,res)=>{
     ).catch()
     
 })
+
+
+
+
 
 app.listen(8080,()=>{
     console.log("server started")
